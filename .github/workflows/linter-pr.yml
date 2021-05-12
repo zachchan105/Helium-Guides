@@ -15,7 +15,7 @@ name: Lint Code Base
 # Start the job on all push #
 #############################
 on:
-  push:
+  pull_request:
 
 ###############
 # Set the Job #
@@ -46,7 +46,7 @@ jobs:
       - name: Lint Code Base
         uses: github/super-linter@v3
         env:
-          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_ALL_CODEBASE: false
           VALIDATE_MARKDOWN: true
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
